@@ -1,0 +1,47 @@
+
+#root{
+    overflow:hidden;
+    padding: 50px;
+    box-sizing:border-box;
+}
+
+#kakaoWrap{
+    position:relative;
+    height:100%;
+}
+
+.header{
+    height:100%;
+    text-align:center
+}
+.header .inner_header{
+    display:inline-block;
+    width: 740px ;
+    margin: 0 auto;
+    white-space: normal;
+    line-height: initial;
+    vertical-align:middle
+}
+
+.header::after{
+    display: inline-block;
+    height:100%;
+    vertical-align:middle;
+    content: ''
+
+}
+
+.content-under-center{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    text-align:center
+}
+
+.content-upside-left{
+    position:absolute;
+    top:0;
+    right:0
+}
+

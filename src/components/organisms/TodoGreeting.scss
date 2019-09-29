@@ -1,0 +1,18 @@
+.TodoGreeting{
+    
+    width:50%;
+    margin:0 auto;
+    .tf_comm{
+        border-bottom:1px solid #eee;
+        input{
+            width:100%;
+            display:block;
+            padding: 15px 10px;
+            font-size: 18px;
+            line-height:20px;
+            border:0 none;
+            box-sizing:border-box
+        }
+    }
+    
+}

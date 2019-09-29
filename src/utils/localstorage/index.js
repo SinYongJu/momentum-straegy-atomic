@@ -19,7 +19,7 @@ export const setItems = (items)=>{
 }
 
 export const getItems = (targets) => {
-  const keys = [...targets] 
+  const keys = [targets] 
   const items = keys.map(key => localStorage.getItem(key));
   return items
 }

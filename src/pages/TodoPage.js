@@ -5,6 +5,7 @@ import TodoTimer from '../components/organisms/TodoTimer'
 import TodoKarma from '../components/organisms/TodoKarma'
 import TodoWeather from '../components/organisms/TodoWeather'
 import TodoList from '../components/organisms/TodoList'
+import TodoSearch from '../components/organisms/TodoSearch'
 import {UserContext} from '../context/UserContext'
 
 const TodoPage = () => {
@@ -24,6 +25,7 @@ const TodoPage = () => {
         todoGreeting = {<TodoGreeting></TodoGreeting>}
         todoWeather = {<TodoWeather/>}
         todoList = {<TodoList/>}
+        todoSearch = {<TodoSearch/>}
       >
       </TodoTemplayte>
   );

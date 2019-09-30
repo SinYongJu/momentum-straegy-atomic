@@ -47,10 +47,15 @@
   right:0;
 }
 
-.content-upside-left{
+.content-upside-right{
   position:absolute;
   top:0;
   right:0
 }
+.content-upside-left{
+    position:absolute;
+    top:0;
+    left:0
+  }
 
 .TodoList,.TodoWeather,.TodoKarma{border:1px solid #eee;border-radius:5px;padding:20px}

@@ -2,7 +2,7 @@ import React from 'react'
 import './TodoTemplayte.scss'
 
 
-const TodoPage = ({backGround,isInitialMemeber,pagesTitle,todoTimer,todoKarma,todoGreeting,todoWeather,todoList}) => {
+const TodoPage = ({backGround,isInitialMemeber,pagesTitle,todoTimer,todoKarma,todoGreeting,todoWeather,todoList,todoSearch}) => {
   
   let isWire = false
   const WireFrame = ({style}) =>{
@@ -35,9 +35,9 @@ const TodoPage = ({backGround,isInitialMemeber,pagesTitle,todoTimer,todoKarma,to
         </>
       }
       </div>
-      <div className="content content-upside-left">
+      <div className="content content-upside-right">
        {isWire  ? 
-        <WireFrame className="content-upside-left"></WireFrame>
+        <WireFrame></WireFrame>
         :
         <>
        {todoWeather}
@@ -47,6 +47,15 @@ const TodoPage = ({backGround,isInitialMemeber,pagesTitle,todoTimer,todoKarma,to
       <div className="content content-under-right">
         {todoList}
       </div> 
+      <div className="content content-upside-left">
+      {isWire  ? 
+       <WireFrame></WireFrame>
+       :
+       <>
+      {todoSearch}
+       </>
+      } 
+      </div>
       </> 
       }
       {/* <div>Todo Search</div>*/}

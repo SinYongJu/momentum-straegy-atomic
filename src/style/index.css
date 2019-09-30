@@ -21,10 +21,7 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
     .screen_out {overflow: hidden;position: absolute;width: 0;height: 0;line-height: 0;text-indent: -9999px}
     html,body,#root{height:100%}
 
-
-
-
 h1{
-    font-size: 78px;
+    font-size: 108px;
     text-align:center
 }

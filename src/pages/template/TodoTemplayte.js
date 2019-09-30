@@ -2,14 +2,15 @@ import React from 'react'
 import './TodoTemplayte.scss'
 
 
-const TodoPage = ({isInitialMemeber,pagesTitle,todoTimer,todoKarma,todoGreeting,todoWeather}) => {
+const TodoPage = ({backGround,isInitialMemeber,pagesTitle,todoTimer,todoKarma,todoGreeting,todoWeather,todoList}) => {
   
   let isWire = false
-  const WireFrame = () =>{
+  const WireFrame = ({style}) =>{
     return <div className="wire"></div>
   }
+ 
   return (
-    <>
+    <div className="inner_wrap" style={{  ...backGround}}>
       <div className="header">
         <div className="inner_header">
         {
@@ -23,7 +24,8 @@ const TodoPage = ({isInitialMemeber,pagesTitle,todoTimer,todoKarma,todoGreeting,
         }
         </div>
       </div>
-
+      {isInitialMemeber&& 
+      <>
       <div className="content content-under-center">
       {isWire  ? 
         <WireFrame></WireFrame>
@@ -42,9 +44,13 @@ const TodoPage = ({isInitialMemeber,pagesTitle,todoTimer,todoKarma,todoGreeting,
         </>
        } 
        </div>
-       
+      <div className="content content-under-right">
+        {todoList}
+      </div> 
+      </> 
+      }
       {/* <div>Todo Search</div>*/}
-    </>
+    </div>
   )
 }
 

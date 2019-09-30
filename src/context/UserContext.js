@@ -1,12 +1,12 @@
 import React,{useState,createContext} from 'react';
-import {setItems,getItems} from '../utils/localstorage'
+import {setItem,getItem,clear} from '../utils/localstorage'
 
 const UserContext = createContext()
 
 
 const UserProvider = ( {children} ) => {
-    const [name,setName] = useState(getItems('name'))
-    const [email,setEmail] = useState(getItems('email'))
+    const [name,setName] = useState(getItem('name'))
+    const [email,setEmail] = useState(getItem('email'))
 
     const [latitude,setLatitude] = useState(0) // 위도
     const [longitude,setLongitude] = useState(0) // 경도
@@ -16,19 +16,25 @@ const UserProvider = ( {children} ) => {
            const lat = data.coords.latitude
            const lon = data.coords.longitude
             setLatitude(lat)
-            setItems({'latitude':lat})
+            setItem({'latitude':lat})
             setLongitude(lon)
-            setItems({'longitude':lon})
+            setItem({'longitude':lon})
         })
     }
 
     const getGeolocations = ()=>{
-        return {latitude : getItems('latitude'),longitude : getItems('longitude')}
+        return {latitude : getItem('latitude'),longitude : getItem('longitude')}
      }
 
      const isInit = () => {
         saveGeolocations()
-        return (getItems('name') && getItems('email'))
+        if(getItem('name') && getItem('email')){
+            return true
+        }else{
+            clear()
+            return false
+        }
+        
     }
     
     const [isInitialMemeber,setIsInitialMemeber] = useState(isInit())
@@ -61,8 +67,8 @@ const UserProvider = ( {children} ) => {
         return saveTolocalUserInfo(name,email)
     }
     const saveTolocalUserInfo = (name, email) =>{    
-        setItems({name})
-        setItems({email})
+        setItem({name})
+        setItem({email})
     }
 
 

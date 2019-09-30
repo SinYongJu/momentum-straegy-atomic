@@ -1,5 +1,6 @@
 import React,{useState,useEffect,useContext} from 'react';
 import {UserContext} from '../../context/UserContext'
+import H2 from '../atoms/H2'
 import Strong from '../atoms/Strong';
 import Desc from '../atoms/Desc';
 import './TodoTimer.scss'
@@ -8,7 +9,7 @@ import './TodoTimer.scss'
 const getH = () => {
   let date = new Date()
   let time = date.getHours() 
-  return time > 12 ? (time -12) : (time < 10) ? '0'+time : time
+  return time > 12 ? ((time -12) < 10 ? '0'+(time -12) : time -12) : (time < 10) ? '0'+time : time
 }
 const getM  = () =>{
   let date = new Date()
@@ -54,8 +55,7 @@ const TodoTimer = () => {
   const [greeting,actionGreeting] = useState(null)
 
   useEffect(()=>{  
-    let deSubscribeTimer = false
-      timer()
+    timer()
     return ()=> {
       clearTimeout(timer)
     }
@@ -72,7 +72,7 @@ const TodoTimer = () => {
 
   return (
     <div className="TodoTimer">
-      <h2>Current Time</h2>
+      <H2>Current Time</H2>
       <Strong>{time}</Strong>
       <Desc>{memo}, {name}</Desc>
     </div >

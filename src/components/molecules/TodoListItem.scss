@@ -1,0 +1,33 @@
+.TodoListItem{
+  position:relative;
+  padding:0 100px 0 50px;
+  &.modify input{
+    position:static
+  }
+  input{
+    position:absolute;
+    top:5px;
+    left:10px;
+    border:0 none;
+    border-bottom:1px solid #eee
+  }
+  label{
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    opacity:0.01;
+  }
+  .btn_modify{
+    position:absolute;
+    right:0;
+    top:0;
+    padding:1px 5px;
+    background-color:green;
+    border-radius:3px;
+    font-size:12px;
+    color:#F0f0f0;
+  }
+
+}

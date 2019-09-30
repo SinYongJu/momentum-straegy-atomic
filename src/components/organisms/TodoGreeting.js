@@ -1,4 +1,5 @@
 import React,{useState,useContext} from 'react';
+import H2 from '../atoms/H2'
 import {UserContext} from '../../context/UserContext'
 import './TodoGreeting.scss'
 
@@ -61,7 +62,7 @@ const TodoGreeting = (props) => {
  
   return (
     <div className="TodoGreeting">
-      <h2>Who are you?</h2>
+      <H2>Who are you?</H2>
        {//  isMemberInYourServiece ? 
        !isSubmit && 
       <div className="tf_comm">

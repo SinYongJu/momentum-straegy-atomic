@@ -11,17 +11,32 @@ const getOwnPropertises = ()=>{
   return arr
 }
 
+/**
+ * 
+ * @param {Object: Object}} items 
+ * key, items Object(ex) obj, arr)
+ */
 export const setItems = (items)=>{
+  
   const keys = Object.keys(items)
+  console.log(keys)
   keys.forEach(key => {
-    localStorage.setItem(key, items[key])
+    localStorage.setItem(key, JSON.stringify(items[key]))
   })
 }
 
-export const getItems = (targets) => {
-  const keys = [targets] 
-  const items = keys.map(key => localStorage.getItem(key));
-  return items
+export const setItem = (targetObj)=>{
+  const key = Object.keys(targetObj)
+  return localStorage.setItem(key, targetObj[key])
+}
+
+export const getItem = (target)=>{
+  return localStorage.getItem(target)
+}
+
+export const getItems = (target) => {
+  const targetData = JSON.parse(localStorage.getItem(target))
+  return targetData
 }
 
 export const getList = () => {

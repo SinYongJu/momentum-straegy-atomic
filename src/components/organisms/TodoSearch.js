@@ -1,6 +1,6 @@
 import React from 'react';
 import H2 from '../atoms/H2'
-
+import './TodoSearch.scss'
 // const SEARCH_API_KEY = 'AIzaSyDg0k4oe_JXy3TFjJKtS-MmO2A1p76d2rY'; 구글용 
 
 const TodoSearch = () => {

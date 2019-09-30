@@ -16,6 +16,7 @@ const TodoListItem = ({children,idIndex,onChange,onClick}) => {
 
   return (
     <li className={`TodoListItem ${modify ? 'modify':''}`}> 
+    <div className="wrpa_item">
     {modify ? 
       <> 
       <label htmlFor={"checkbox0"+idIndex}>{"checkbox0"+idIndex}</label>
@@ -30,6 +31,7 @@ const TodoListItem = ({children,idIndex,onChange,onClick}) => {
         <button className="btn_modify" onClick={ e => onClickHandler(e)}>modify</button>
       </>
       }
+      </div>
     </li>
     
     

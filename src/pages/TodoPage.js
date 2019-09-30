@@ -11,9 +11,9 @@ import {UserContext} from '../context/UserContext'
 const TodoPage = () => {
 
   const {isInitialMemeber} = useContext(UserContext)
-  
-  const index = Math.floor(Math.random()*10)+1;
-  const backGround = { backgroundImage : `url(/bg_img0${index})`}
+
+  const index = Math.floor(Math.random()*5)+1;
+  const backGround = { backgroundImage : `url(/images/bg_todo0${index}.jpg)`}
  
   return (
       <TodoTemplayte

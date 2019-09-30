@@ -8,9 +8,18 @@ const TodoPage = ({backGround,isInitialMemeber,pagesTitle,todoTimer,todoKarma,to
   const WireFrame = ({style}) =>{
     return <div className="wire"></div>
   }
- 
+  
+  const [ isOnload, setIsOnLoad] = React.useState(false)
+    
+  React.useEffect(()=>{
+    window.addEventListener('load',(e)=>{
+      console.log(e)
+      setIsOnLoad(true)
+    })
+  },[])
+  
   return (
-    <div className="inner_wrap" style={{  ...backGround}}>
+    <div className={`inner_wrap ${isOnload ? 'on' : ''}`}  style={{...backGround}}>
       <div className="header">
         <div className="inner_header">
         {

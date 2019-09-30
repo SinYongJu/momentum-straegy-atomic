@@ -12,18 +12,16 @@ const TodoList = () => {
   const todolistItemFormat = {
     task : ''
   }
-
   const [value, setValue] = useState('');
   const [list, setList] = useState([]);
-  const [checkedList, setCheckedList] = useState([]);
-  const [checkedItemList, setCheckedItemList] = useState([]);
-
 
   useEffect(()=>{
     getTodoListItems()
-    console.log(list)
-    // deleteTodoListItems([1,2,3,4,5,6,7],0)
   },[])
+
+  const [checkedList, setCheckedList] = useState([]);
+  const [checkedItemList, setCheckedItemList] = useState([]);
+
 
   const getTodoListItems = () => {
     setList(getListItemsAtLocal())
@@ -59,7 +57,6 @@ const TodoList = () => {
     checkedItemList.map(item => {
       item.checked = null
     })
-    
 
   }
 
@@ -129,7 +126,7 @@ const TodoList = () => {
   }
 
   return (
-    <div className="TodoList">
+    <div className="TodoList" >
       <H2>Im, TodoList</H2>
       <Strong>Write your task</Strong>
       <div className="tf_comm">

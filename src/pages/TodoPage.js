@@ -11,15 +11,13 @@ import {UserContext} from '../context/UserContext'
 const TodoPage = () => {
 
   const {isInitialMemeber} = useContext(UserContext)
-
-  const index = Math.floor(Math.random()*5)+1;
-  const backGround = { backgroundImage : `url(/images/bg_todo0${index}.jpg)`}
- 
+  const [index , setIndex ] = React.useState(Math.floor(Math.random()*5)+1)
+  const [backGround , setbackGround] = React.useState( { backgroundImage : `url(/images/bg_todo0${index}.jpg)`}) 
   return (
       <TodoTemplayte
         backGround = {backGround}
         isInitialMemeber={isInitialMemeber}
-        pagesTitle = {<h1>Momentum todos</h1>}
+        pagesTitle = {<h1>Momentum</h1>}
         todoTimer = {<TodoTimer/>}
         todoKarma = {<TodoKarma/>}
         todoGreeting = {<TodoGreeting></TodoGreeting>}
